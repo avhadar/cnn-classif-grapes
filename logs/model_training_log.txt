@@ -1,0 +1,119 @@
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+
+IPython 7.8.0 -- An enhanced Interactive Python.
+
+
+
+
+
+
+
+import tensorflow as tf
+from keras.preprocessing.image import  ImageDataGenerator
+
+tf.__version__
+Out[1]: '2.3.0'
+
+train_datagen = ImageDataGenerator(
+        rescale=1./255,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True)
+
+# connect train_datagen object to the training data
+training_set = train_datagen.flow_from_directory(
+        'dataset/training_set',
+        target_size=(64, 64),
+        batch_size=32,
+        class_mode='binary') # binary (here) / categorical
+Found 9070 images belonging to 2 classes.
+
+test_datagen = ImageDataGenerator(rescale=1./255)
+
+# connect test_datagen object to the test data
+test_set = test_datagen.flow_from_directory(
+        'dataset/test_set',
+        target_size=(64, 64),
+        batch_size=32,
+        class_mode='binary')
+Found 3028 images belonging to 2 classes.
+
+cnn = tf.keras.models.Sequential()
+
+# Step 1 - Convolution -> use input_shape only for the 1st convolutional layer !!
+cnn.add(tf.keras.layers.Conv2D(filters = 32, kernel_size=3, activation = 'relu', input_shape = [64, 64, 3])) 
+# filters -> number of feature detectors; kernel_size -> size of the feature detector; activation -> rectifier; input_shape -> 3-dim for RGB coding colors
+
+# Step 2 - Pooling
+cnn.add(tf.keras.layers.MaxPool2D(pool_size = 2, strides = 2))
+# stride -> how to slide (in pixels)
+
+# Adding a second convolutional layer
+cnn.add(tf.keras.layers.Conv2D(filters = 32, kernel_size=3, activation = 'relu')) 
+cnn.add(tf.keras.layers.MaxPool2D(pool_size = 2, strides = 2))
+
+# Step 3 - Flattening
+cnn.add(tf.keras.layers.Flatten())
+
+
+# Step 4 - Full Connection
+cnn.add(tf.keras.layers.Dense(units = 128, activation = 'relu'))
+
+# Step 5 - Output Layer
+cnn.add(tf.keras.layers.Dense(units = 1, activation = 'sigmoid')) # units = 1 -> for binary classification
+
+cnn.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy']) # adam optimizer -> gradient descent
+
+cnn.fit(x = training_set, validation_data = test_set, epochs = 25)
+Epoch 1/25
+284/284 [==============================] - 404s 1s/step - loss: 0.1059 - accuracy: 0.9566 - val_loss: 0.1477 - val_accuracy: 0.9386
+Epoch 2/25
+284/284 [==============================] - 235s 827ms/step - loss: 0.0412 - accuracy: 0.9845 - val_loss: 0.1438 - val_accuracy: 0.9406
+Epoch 3/25
+284/284 [==============================] - 244s 858ms/step - loss: 0.0277 - accuracy: 0.9897 - val_loss: 0.1590 - val_accuracy: 0.9389
+Epoch 4/25
+284/284 [==============================] - 234s 823ms/step - loss: 0.0216 - accuracy: 0.9938 - val_loss: 0.1150 - val_accuracy: 0.9703
+Epoch 5/25
+284/284 [==============================] - 233s 820ms/step - loss: 0.0272 - accuracy: 0.9894 - val_loss: 0.1942 - val_accuracy: 0.9432
+Epoch 6/25
+284/284 [==============================] - 116s 409ms/step - loss: 0.0265 - accuracy: 0.9903 - val_loss: 0.1256 - val_accuracy: 0.9518
+Epoch 7/25
+284/284 [==============================] - 110s 388ms/step - loss: 0.0124 - accuracy: 0.9951 - val_loss: 0.2198 - val_accuracy: 0.9485
+Epoch 8/25
+284/284 [==============================] - 108s 381ms/step - loss: 0.0142 - accuracy: 0.9953 - val_loss: 0.2369 - val_accuracy: 0.9260
+Epoch 9/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0158 - accuracy: 0.9950 - val_loss: 0.1187 - val_accuracy: 0.9590
+Epoch 10/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0105 - accuracy: 0.9963 - val_loss: 0.1299 - val_accuracy: 0.9581
+Epoch 11/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0104 - accuracy: 0.9964 - val_loss: 0.1468 - val_accuracy: 0.9561
+Epoch 12/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0102 - accuracy: 0.9963 - val_loss: 0.1183 - val_accuracy: 0.9607
+Epoch 13/25
+284/284 [==============================] - 111s 392ms/step - loss: 0.0122 - accuracy: 0.9960 - val_loss: 0.0838 - val_accuracy: 0.9633
+Epoch 14/25
+284/284 [==============================] - 116s 410ms/step - loss: 0.0104 - accuracy: 0.9960 - val_loss: 0.1203 - val_accuracy: 0.9505
+Epoch 15/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0072 - accuracy: 0.9975 - val_loss: 0.1002 - val_accuracy: 0.9600
+Epoch 16/25
+284/284 [==============================] - 108s 381ms/step - loss: 0.0097 - accuracy: 0.9959 - val_loss: 0.2021 - val_accuracy: 0.9448
+Epoch 17/25
+284/284 [==============================] - 108s 379ms/step - loss: 0.0043 - accuracy: 0.9986 - val_loss: 0.1615 - val_accuracy: 0.9680
+Epoch 18/25
+284/284 [==============================] - 107s 378ms/step - loss: 0.0101 - accuracy: 0.9966 - val_loss: 0.0990 - val_accuracy: 0.9561
+Epoch 19/25
+284/284 [==============================] - 108s 379ms/step - loss: 0.0121 - accuracy: 0.9956 - val_loss: 0.1040 - val_accuracy: 0.9650
+Epoch 20/25
+284/284 [==============================] - 107s 378ms/step - loss: 0.0061 - accuracy: 0.9974 - val_loss: 0.1141 - val_accuracy: 0.9557
+Epoch 21/25
+284/284 [==============================] - 107s 378ms/step - loss: 0.0035 - accuracy: 0.9983 - val_loss: 0.3064 - val_accuracy: 0.9429
+Epoch 22/25
+284/284 [==============================] - 108s 380ms/step - loss: 0.0070 - accuracy: 0.9972 - val_loss: 0.4162 - val_accuracy: 0.9270
+Epoch 23/25
+284/284 [==============================] - 108s 379ms/step - loss: 0.0047 - accuracy: 0.9981 - val_loss: 0.0880 - val_accuracy: 0.9706
+Epoch 24/25
+284/284 [==============================] - 108s 379ms/step - loss: 0.0022 - accuracy: 0.9993 - val_loss: 0.2238 - val_accuracy: 0.9524
+Epoch 25/25
+284/284 [==============================] - 108s 379ms/step - loss: 0.0062 - accuracy: 0.9981 - val_loss: 0.1910 - val_accuracy: 0.9571
+Out[7]: <tensorflow.python.keras.callbacks.History at 0x59069e1c8>

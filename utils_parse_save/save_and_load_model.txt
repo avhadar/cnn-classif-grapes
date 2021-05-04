@@ -1,0 +1,42 @@
+#------------------------------------------------------------------
+# How to save the model
+#------------------------------------------------------------------
+
+# Save model
+# serialize model to JSON
+model_json = cnn.to_json()
+with open("model.json", "w") as json_file:
+    json_file.write(model_json)
+print("Saved model to JSON file")
+
+# serialize model to YAML (alternative to JSON)
+model_yaml = cnn.to_yaml()
+with open("model.yaml", "w") as yaml_file:
+    yaml_file.write(model_yaml)    
+print("Saved model to YAML file")   
+ 
+# serialize weights to HDF5
+cnn.save_weights("model.h5")
+print("Saved model to disk")
+
+
+
+#------------------------------------------------------------------
+# How to load the model
+#------------------------------------------------------------------
+
+# .... load saved model for use
+# JSON example
+from keras.models import model_from_json
+# load json and create model
+json_file = open('model.json', 'r')
+loaded_model_json = json_file.read()
+json_file.close()
+loaded_model = model_from_json(loaded_model_json)
+# load weights into new model
+loaded_model.load_weights("model.h5")
+print("Loaded model from disk")
+
+# evaluate loaded model on test data
+loaded_model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
+# ... then use the model for predictions and analysis

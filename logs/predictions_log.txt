@@ -1,0 +1,323 @@
+import numpy as np
+from keras.preprocessing import image
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_1.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+Out[10]: {'apples': 0, 'grapes': 1}
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_2.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_3.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_4.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_5.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_6.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_7.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_8.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_9.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_10.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_15.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_14.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_13.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_12.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_11.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+apples
+
+test_image = image.load_img('dataset/single_prediction/apple_or_grape_16.jpg', target_size = (64, 64)) # -> PIL format
+
+test_image = image.img_to_array(test_image) # numpy array of the image
+
+# model works with batches -> add extra dimension to convert into a batch; where -> batch is first dim.
+test_image = np.expand_dims(test_image, axis = 0) # axis = 0 -> adding a dimension as first dimension (the batch)
+
+result = cnn.predict(test_image)
+
+training_set.class_indices # -> which index corresponds to apples(0), which to grapes(1) (result)
+
+if result[0][0] == 1:
+    prediction = 'grapes'
+else:
+    prediction = 'apples'
+
+
+print(prediction)
+grapes

@@ -1,0 +1,9 @@
+Data:
+1)apple images merged from multiple sources (open datasets, own images, web scraping)
+2)grape images merged from multiple sources (open datasets, own images, web scraping)
+
+Mostly fruit images taken in real-world settings or similar to such settings.
+
+Training data: 9070 images
+Test data: 3028 images
+Single predictions: sample images used for prediction

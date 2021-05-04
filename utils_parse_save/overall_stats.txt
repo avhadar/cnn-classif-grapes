@@ -1,0 +1,35 @@
+Training data - accuracy:
+Min: 0.9566
+Max: 0.9993
+Mean: 0.9937320000000001
+Start value: 0.9566
+End value: 0.9981
+
+Validation data - accuracy:
+Min: 0.926
+Max: 0.9706
+Mean: 0.9522080000000002
+Start value: 0.9386
+End value: 0.9571
+
+Training data - loss:
+Min: 0.0022
+Max: 0.1059
+Mean: 0.016772
+Start value: 0.1059
+End value: 0.0062
+
+Validation data - loss:
+Min: 0.0838
+Max: 0.4162
+Mean: 0.162644
+Start value: 0.1477
+End value: 0.191
+
+Time per epoch (s):
+Min: 107.0
+Max: 404.0
+Mean: 141.12
+Start value: 404.0
+End value: 108.0
+Total time (all epochs): 3528.0
